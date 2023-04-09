@@ -1,6 +1,13 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 	import Code from './icons/Code.svelte';
 	import Hamburger from './icons/Hamburger.svelte';
+	import type { User } from '$lib/types/CustomTypes';
+
+	let user: User | null = null;
+
+	$: $page, (user = $page.data?.user ?? null);
 
 	let active = false;
 	let isOpen = false;
@@ -29,7 +36,17 @@
 			<li><a href="/" class:active on:click={toggleMenu}>Home</a></li>
 			<li><a href="/about" class:active on:click={toggleMenu}>About</a></li>
 			<li><a href="/contact" class:active on:click={toggleMenu}>Contact</a></li>
-			<li><a href="/login" class:active on:click={toggleMenu}>Login</a></li>
+			{#if user}
+				<li><a href="/profile" class:active on:click={toggleMenu}>Profile</a></li>
+				<li>
+					<form action="/logout?/logout" method="POST" use:enhance>
+						<button type="submit">Logout</button>
+					</form>
+				</li>
+			{:else}
+				<li><a href="/login" class:active on:click={toggleMenu}>Login</a></li>
+				<li><a href="/register" class:active on:click={toggleMenu}>Register</a></li>
+			{/if}
 		</ul>
 	</div>
 </div>
@@ -72,6 +89,22 @@
 
 	li a:hover {
 		color: var(--text-secondary);
+	}
+
+	button {
+		background: none;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: var(--text-primary);
+		font-size: 1.1rem;
+		padding: 1rem;
+	}
+
+	button:hover {
+		color: var(--text-tertiary);
 	}
 
 	.logo {

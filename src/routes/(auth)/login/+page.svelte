@@ -6,7 +6,7 @@
 	<div class="auth__header">
 		<h1 class="auth__title">Login</h1>
 	</div>
-	<form class="form" method="POST" action="" use:enhance>
+	<form class="form" method="POST" action="?/login" use:enhance>
 		<div class="form__group">
 			<label for="email" class="visually__hidden">Email</label>
 			<input type="text" class="form__control" id="email" name="email" placeholder="Email" />

@@ -1,7 +1,5 @@
 <script>
 	export let active = false;
-
-	$: active, console.log(active);
 </script>
 
 <div class="hamburger" class:active>
@@ -18,14 +16,14 @@
 		height: 35px;
 		cursor: pointer;
 		transition: all 0.5s ease-in-out;
-		border: 1px solid #fff;
-		background-color: var(--accent-primary);
+		border: 1px solid var(--accent-primary);
+		background: var(--accent-secondary);
 	}
 
 	.hamburger__line {
 		width: 20px;
 		height: 2px;
-		background-color: #fff;
+		background-color: var(--accent-primary);
 		border-radius: 5px;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 		transition: all 0.5s ease-in-out;
@@ -37,7 +35,7 @@
 		position: absolute;
 		width: 20px;
 		height: 2px;
-		background-color: #fff;
+		background-color: var(--accent-primary);
 		border-radius: 5px;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 		transition: all 0.5s ease-in-out;
