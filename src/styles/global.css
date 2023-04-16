@@ -1,7 +1,7 @@
 :root {
 	--bg-primary: #151515;
-	--bg-secondary: #1f1f1f;
-	--bg-tertiary: #2b2b2b;
+	--bg-secondary: #6852e1;
+	--bg-tertiary: #482a72;
 
 	--text-primary: #ccc;
 	--text-secondary: #b3b3b3;
@@ -12,7 +12,9 @@
 	--border-tertiary: #808080;
 
 	--accent-primary: #6852e1;
-	--accent-secondary: #301934;
+	--accent-secondary: #482a72;
+
+	--border-radius: 0.25rem;
 }
 
 * {
@@ -30,7 +32,7 @@ body {
 body {
 	font-family: 'Roboto', sans-serif;
 	color: var(--text-primary);
-	background-image: linear-gradient(-45deg, #151515 25%, 75%, #6852e1);
+	background: var(--bg-secondary);
 }
 
 a {
@@ -93,6 +95,14 @@ li {
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	gap: 0.5rem;
+}
+
+.form__group--multi-offset {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	width: 100%;
+	gap: 0.5rem;
 }
 
 .form__control {
@@ -140,7 +150,7 @@ li {
 	padding: 1rem;
 	border: 1px solid var(--border-primary);
 	border-radius: 0.25rem;
-	background-color: var(--bg-secondary);
+	background: none;
 	color: var(--text-primary);
 	cursor: pointer;
 }
@@ -198,6 +208,17 @@ li {
 }
 
 .btn__primary--outline {
+	baclground: transparent;
 	border-color: var(--accent-primary);
 	color: var(--accent-primary);
+}
+
+.btn__primary--outline:hover {
+	background-color: var(--accent-primary);
+	color: var(--bg-primary);
+}
+
+.btn__secondary--outline {
+	border-color: var(--accent-secondary);
+	color: var(--accent-secondary);
 }

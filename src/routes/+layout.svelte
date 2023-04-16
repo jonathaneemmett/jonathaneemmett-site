@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$styles/global.css';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <Navbar />
@@ -9,8 +10,10 @@
 	<slot />
 </main>
 
+<Footer />
+
 <style>
 	main {
-		padding: 1rem;
+		height: 100vh;
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Sidebar from '$lib/components/shared/Sidebar.svelte';
 	import type { User } from '$lib/types/CustomTypes';
 
 	let user: User | null = null;
@@ -12,15 +13,19 @@
 		Welcome, {#if user} {user?.email} {:else} "Visitor" {/if}
 	</h1>
 	<p>Here's your profile.</p>
+	<div class="profile__content">
+		<Sidebar />
+		<div class="content">
+			<h1>Content</h1>
+			<p>Here's some content.</p>
+		</div>
+	</div>
 </section>
 
 <style>
 	.profile {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin-block-start: 300px;
 	}
 
 	.profile > h1 {
@@ -32,5 +37,17 @@
 	.profile > p {
 		font-size: 1rem;
 		font-size: clamp(1rem, 0.7647058823529411rem + 1.1764705882352942vw, 1.5rem);
+	}
+
+	.profile__content {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding-inline: 1rem;
 	}
 </style>
