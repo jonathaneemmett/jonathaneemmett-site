@@ -61,23 +61,23 @@
 
 	.articles {
 		display: flex;
-		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
 		flex-wrap: wrap;
 		width: 100%;
-		height: 400px;
-		padding-block: 1.5rem;
+		max-width: 1290px;
+		height: 100%;
+		padding-block: 1rem;
+		padding-inline: 1rem;
 	}
 	.article {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 350px;
-		height: 100%;
-		padding: 1rem;
+		flex: 1 1 0px;
+		padding-block: 5rem;
 		border: 1px solid var(--text-primary);
 		border-radius: var(--border-radius);
 	}
@@ -91,15 +91,7 @@
 		align-items: center;
 		justify-content: center;
 		height: 100%;
-		width: 50px;
-		border: 1px solid var(--text-primary);
-		border-radius: var(--border-radius);
-
+		width: 20px;
 		cursor: pointer;
-	}
-
-	.more:hover {
-		background: var(--accent-secondary);
-		border: 1px solid var(--border-tertiary);
 	}
 </style>
