@@ -222,3 +222,9 @@ li {
 	border-color: var(--accent-secondary);
 	color: var(--accent-secondary);
 }
+
+@media screen and (max-width: 62.5em) {
+	.form__group--multi-offset {
+		grid-template-columns: 1fr;
+	}
+}

@@ -22,14 +22,19 @@
 		<a href="/">jonathan <span>emmett</span> </a>
 	</div>
 	<ul class="nav__links">
-		<input type="checkbox" name="checkbox__toggle" id="checkbox__toggle" />
+		<input
+			type="checkbox"
+			name="checkbox__toggle"
+			id="checkbox__toggle"
+			checked={isOpen}
+			on:click={toggleMenu}
+		/>
 		<label for="checkbox__toggle" class="nav__hamburger">
 			<Hamburger active={isOpen} />
 		</label>
 		<div class="nav__menu">
 			<li><a href="/" class:active on:click={toggleMenu}>Home</a></li>
-			<!-- <li><a href="/about" class:active on:click={toggleMenu}>About</a></li>
-			<li><a href="/contact" class:active on:click={toggleMenu}>Contact</a></li> -->
+			<li><a href="/articles" class:active on:click={toggleMenu}>Articles</a></li>
 			{#if user}
 				<li><a href="/profile" class:active on:click={toggleMenu}>Profile</a></li>
 				<li>
@@ -128,5 +133,32 @@
 
 	button:hover {
 		color: var(--text-tertiary);
+	}
+
+	@media (max-width: 62.5em) {
+		.nav__menu {
+			display: none;
+			position: absolute;
+			background-color: var(--bg-primary);
+			width: 225px;
+			height: 100vh;
+			right: 0;
+			top: 3.5rem;
+			text-align: center;
+			padding-block: 1rem;
+		}
+
+		.nav__menu li {
+			display: block;
+			transition: 0.3s ease-in-out;
+		}
+
+		.nav__hamburger {
+			display: block;
+		}
+
+		input[type='checkbox']:checked ~ .nav__menu {
+			display: block;
+		}
 	}
 </style>

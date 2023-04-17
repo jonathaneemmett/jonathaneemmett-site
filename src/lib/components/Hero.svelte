@@ -38,6 +38,8 @@
 	.hero__content p {
 		font-size: 1.5rem;
 		margin: 1rem 0;
+		width: 100%;
+		max-width: 600px;
 	}
 
 	.hero__content a {
