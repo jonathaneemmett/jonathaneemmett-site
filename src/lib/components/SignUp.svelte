@@ -16,7 +16,7 @@
 		justify-content: center;
 		width: 100%;
 		height: auto;
-		background: var(--accent-secondary);
+		background: var(--accent-primary);
 		padding-block: 1rem;
 	}
 

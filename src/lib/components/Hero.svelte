@@ -8,7 +8,7 @@
 			I'm a full stack developer with a passion for learning new technologies and creating
 			beautiful, responsive websites.
 		</p>
-		<a href="/">Learn More</a>
+		<a href="/" class="btn btn__secondary">Learn More</a>
 	</div>
 </section>
 
@@ -17,7 +17,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: var(--bg-primary);
+		background: var(--bg-tertiary);
 		color: var(--text-primary);
 		padding: 1rem;
 		height: 66vh;
@@ -42,12 +42,12 @@
 		max-width: 600px;
 	}
 
-	.hero__content a {
+	/* .hero__content a {
 		display: inline-block;
 		padding: 0.5rem 1rem;
 		background: var(--bg-secondary);
 		color: var(--text-secondary);
 		border-radius: 0.25rem;
 		text-decoration: none;
-	}
+	} */
 </style>

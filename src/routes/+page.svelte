@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Hero from '$lib/components/Hero.svelte';
 	import SignUp from '$lib/components/SignUp.svelte';
-	import Articles from '$lib/components/articles/Articles.svelte';
+	import HomeArticles from '$lib/components/articles/HomeArticles.svelte';
 	import type { Article } from '$lib/types/CustomTypes';
 
 	let articles: Article[] = [];
@@ -13,7 +13,7 @@
 <Hero />
 <div class="home">
 	<SignUp />
-	<Articles {articles} limit={3} />
+	<HomeArticles {articles} limit={3} />
 </div>
 
 <style>

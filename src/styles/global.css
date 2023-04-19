@@ -1,15 +1,16 @@
 :root {
-	--bg-primary: #151515;
+	--bg-primary: #f5f5f5;
 	--bg-secondary: #6852e1;
-	--bg-tertiary: #482a72;
+	--bg-tertiary: #151515;
 
 	--text-primary: #ccc;
-	--text-secondary: #b3b3b3;
-	--text-tertiary: #808080;
+	--text-secondary: #6852e1;
+	--text-tertiary: #151515;
+	--text-quaternary: #482a72;
 
-	--border-primary: #2b2b2b;
-	--border-secondary: #404040;
-	--border-tertiary: #808080;
+	--border-primary: #ccc;
+	--border-secondary: #6852e1;
+	--border-tertiary: #151515;
 
 	--accent-primary: #6852e1;
 	--accent-secondary: #482a72;
@@ -32,7 +33,7 @@ body {
 body {
 	font-family: 'Roboto', sans-serif;
 	color: var(--text-primary);
-	background: var(--bg-secondary);
+	background: var(--bg-primary);
 }
 
 a {
@@ -124,12 +125,13 @@ li {
 }
 
 .form__control:disabled {
+	border: 1px solid var(--border-secondary);
 	background-color: var(--bg-tertiary);
 	color: var(--text-tertiary);
 }
 
 .form__control:disabled::placeholder {
-	color: var(--text-tertiary);
+	color: var(--text-secondary);
 }
 
 .form__control--error {
@@ -179,8 +181,8 @@ li {
 }
 
 .btn__secondary {
-	border-color: var(--accent-secondary);
-	color: var(--accent-secondary);
+	background: var(--bg-secondary);
+	color: var(--text-primary);
 }
 
 .btn__secondary:hover {
@@ -209,13 +211,13 @@ li {
 
 .btn__primary--outline {
 	baclground: transparent;
-	border-color: var(--accent-primary);
-	color: var(--accent-primary);
+	border-color: var(--border-primary);
+	color: var(--text-primary);
 }
 
 .btn__primary--outline:hover {
-	background-color: var(--accent-primary);
-	color: var(--bg-primary);
+	background-color: var(--accent-secondary);
+	color: var(--text-primary);
 }
 
 .btn__secondary--outline {

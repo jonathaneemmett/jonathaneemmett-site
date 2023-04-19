@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Article } from '$lib/types/CustomTypes';
-	import DoubleChevronRight from '$lib/components/icons/DoubleChevronRight.svelte';
-	import ArticleItem from './ArticleItem.svelte';
+	import DoubleChevronRight from '../icons/DoubleChevronRight.svelte';
+	import HomeArticleItem from './HomeArticleItem.svelte';
 
 	export let articles: Article[] = [];
 	export let limit: number = 0;
@@ -14,7 +14,7 @@
 <section class="articles">
 	<div class="article__content">
 		{#each articles as article}
-			<ArticleItem {article} />
+			<HomeArticleItem {article} />
 		{/each}
 	</div>
 	<div class="article__footer">
@@ -30,6 +30,7 @@
 	.articles {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		width: 100%;
 		height: 100%;
@@ -39,7 +40,7 @@
 
 	.article__content {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		gap: 1rem;
 		width: 100%;
 		max-width: 1290px;
@@ -62,6 +63,10 @@
 		cursor: pointer;
 		gap: 0.5rem;
 		color: var(--text-secondary);
+	}
+
+	.more:hover {
+		color: var(--text-primary);
 	}
 
 	@media screen and (max-width: 62.5em) {

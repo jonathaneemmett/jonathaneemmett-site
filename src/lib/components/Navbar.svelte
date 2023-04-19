@@ -44,7 +44,6 @@
 				</li>
 			{:else}
 				<li><a href="/login" class:active on:click={toggleMenu}>Login</a></li>
-				<li><a href="/register" class:active on:click={toggleMenu}>Register</a></li>
 			{/if}
 		</div>
 	</ul>
@@ -55,7 +54,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background: var(--bg-primary);
+		background: var(--bg-tertiary);
 		color: var(--text-primary);
 		padding: 1rem;
 	}
@@ -75,7 +74,7 @@
 	}
 
 	.logo span {
-		color: var(--text-tertiary);
+		color: var(--text-secondary);
 	}
 
 	.active {
