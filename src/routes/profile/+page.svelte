@@ -1,20 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Sidebar from '$lib/components/shared/Sidebar.svelte';
-	import type { User } from '$lib/types/CustomTypes';
+	import type { Profile, User } from '$lib/types/CustomTypes';
 
 	let user: User | null = null;
+	let profile: Profile | null = null;
 
-	$: $page, (user = $page.data?.user ?? null);
+	$: $page, ((user = $page.data?.user ?? null), (profile = $page.data?.profile ?? null));
 </script>
 
 <section class="profile">
 	<h1>
-		Welcome, {#if user} {user?.email} {:else} "Visitor" {/if}
+		Welcome, {#if profile} {profile.name} {:else} "Visitor" {/if}
 	</h1>
 	<p>Here's your profile.</p>
 	<div class="profile__content">
-		<Sidebar />
+		<div class="profile__sidebar">
+			<Sidebar />
+		</div>
 		<div class="content">
 			<h1>Content</h1>
 			<p>Here's some content.</p>
@@ -26,6 +29,8 @@
 	.profile {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
+		width: 100%;
 	}
 
 	.profile > h1 {
@@ -40,8 +45,13 @@
 	}
 
 	.profile__content {
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 1fr;
+		width: 100%;
+		padding-block: 1rem;
+	}
+	.profile__sidebar {
+		padding-inline: 1rem;
 	}
 
 	.content {
@@ -49,5 +59,11 @@
 		flex-direction: column;
 		flex: 1;
 		padding-inline: 1rem;
+	}
+
+	@media screen and (min-width: 62.5em) {
+		.profile__content {
+			grid-template-columns: 2fr 10fr;
+		}
 	}
 </style>

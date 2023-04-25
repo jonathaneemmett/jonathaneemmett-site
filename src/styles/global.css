@@ -36,6 +36,39 @@ body {
 	background: var(--bg-primary);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: 0.875rem;
+}
+
+h6 {
+	font-size: 0.75rem;
+}
+
 a {
 	text-decoration: none;
 	color: var(--text-primary);
@@ -109,9 +142,9 @@ li {
 .form__control {
 	width: 100%;
 	padding: 1rem;
-	border: 1px solid var(--border-primary);
+	border: 1px solid var(--border-secondary);
 	border-radius: 0.25rem;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-primary);
 	color: var(--text-primary);
 }
 
@@ -121,7 +154,7 @@ li {
 }
 
 .form__control::placeholder {
-	color: var(--text-secondary);
+	color: var(--text-primary);
 }
 
 .form__control:disabled {
@@ -223,6 +256,11 @@ li {
 .btn__secondary--outline {
 	border-color: var(--accent-secondary);
 	color: var(--accent-secondary);
+}
+
+.btn__secondary--outline:hover {
+	background-color: var(--bg-tertiary);
+	color: var(--text-secondary);
 }
 
 @media screen and (max-width: 62.5em) {

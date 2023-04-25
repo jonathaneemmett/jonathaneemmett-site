@@ -2,9 +2,11 @@
 	import type { Article } from '$lib/types/CustomTypes';
 	import DoubleChevronRight from '$lib/components/icons/DoubleChevronRight.svelte';
 	import ArticleItem from './ArticleItem.svelte';
+	import NotFound from '../shared/NotFound.svelte';
 
 	export let articles: Article[] = [];
 	export let limit: number = 0;
+	export let tag: string = '';
 
 	if (limit > 0) {
 		articles = articles.slice(0, limit);
@@ -15,6 +17,8 @@
 	<div class="article__content">
 		{#each articles as article}
 			<ArticleItem {article} />
+		{:else}
+			<NotFound message={`No articles found${tag !== '' ? ` for ${tag}` : ''}.`} />
 		{/each}
 	</div>
 	<div class="article__footer">
